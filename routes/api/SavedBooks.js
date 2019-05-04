@@ -2,16 +2,13 @@ const router = require("express").Router();
 const SavedBooksController = require("../../controllers/SavedSavedBooksController");
 
 // Matches with "/api/books"
-router.route("/")
+router.route("/saved")
   .get(SavedBooksController.findAll)
-  .post(SavedBooksController.create);
+  .post(SavedBooksController.create);  
 
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
-  .get(SavedBooksController.findById)
-  .put(SavedBooksController.update)
+  .route("saved/:id")
   .delete(SavedBooksController.remove);
 
 module.exports = router;
-
